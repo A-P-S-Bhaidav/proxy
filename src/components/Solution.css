@@ -1,0 +1,139 @@
+.solution-section {
+  padding: 6rem 2rem;
+  background-color: var(--bg, #0a0a0a);
+  color: var(--text, #f0ede6);
+  overflow: hidden;
+}
+
+.solution-section .section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.reveal-item-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-item-fade.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(-50%);
+}
+
+.timeline-step {
+  position: relative;
+  width: 50%;
+  padding: 2rem 3rem;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-step.left {
+  left: 0;
+  text-align: right;
+  transform: translateX(-50px);
+}
+
+.timeline-step.right {
+  left: 50%;
+  text-align: left;
+  transform: translateX(50px);
+}
+
+.timeline-step.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-node {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg, #0a0a0a);
+  border: 2px solid var(--accent, #c9a96e);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.timeline-step.left .timeline-node {
+  right: -10px;
+}
+
+.timeline-step.right .timeline-node {
+  left: -10px;
+}
+
+.timeline-content {
+  background: var(--bg-card, #111111);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.timeline-number {
+  color: var(--accent, #c9a96e);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.timeline-desc {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted, #a0a0a0);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+    transform: none;
+  }
+  
+  .timeline-step {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 1.5rem 0 1.5rem 50px;
+  }
+
+  .timeline-step.left, 
+  .timeline-step.right {
+    left: 0;
+    transform: translateX(-30px);
+  }
+
+  .timeline-step.left .timeline-node, 
+  .timeline-step.right .timeline-node {
+    left: 10px;
+    right: auto;
+  }
+}
