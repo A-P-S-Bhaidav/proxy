@@ -45,7 +45,7 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner">
-          <a href="#home" className="nav-logo" onClick={closeMobileMenu}>PROXY</a>
+          <a href="#home" className="nav-logo" onClick={closeMobileMenu}><img src="/logo.jpg" alt="PROXY" className="nav-logo-img" /></a>
           
           <div className="nav-links">
             {navLinks.map((link) => (

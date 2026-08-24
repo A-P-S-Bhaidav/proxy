@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import './Projects.css';
 
 const projects = [
@@ -10,42 +11,48 @@ const projects = [
   { id: 6, name: 'Project Zeta', tag: 'Cross-platform · 60 Posts/day', bg: 'linear-gradient(135deg, #c94b4b, #4b134f)' }
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.15 }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.92 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
+  }
+};
+
 const Projects = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const elements = sectionRef.current.querySelectorAll('.reveal-project');
-    elements.forEach(el => observer.observe(el));
-
-    return () => {
-      elements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
-
   return (
-    <section className="projects-section" ref={sectionRef} id="work">
+    <section className="projects-section" id="projects">
       <div className="container">
-        <div className="section-header reveal-project">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <span className="section-label">OUR WORK</span>
           <h2 className="section-title">Campaigns that delivered results</h2>
           <p className="section-subtitle">Real brands, real growth, real impact.</p>
-        </div>
+        </motion.div>
 
-        <div className="projects-grid">
-          {projects.map((proj, index) => (
-            <div 
-              key={proj.id} 
-              className="project-card reveal-project"
-              style={{ transitionDelay: `${index * 0.1}s` }}
-            >
+        <motion.div
+          className="projects-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          {projects.map((proj) => (
+            <motion.div key={proj.id} className="project-card" variants={cardVariants}>
               <div className="project-image-wrapper" style={{ background: proj.bg }}>
                 <div className="project-overlay">
                   <span className="coming-soon">Coming Soon</span>
@@ -55,9 +62,9 @@ const Projects = () => {
                 <h3 className="project-name">{proj.name}</h3>
                 <p className="project-tag">{proj.tag}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

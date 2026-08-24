@@ -1,5 +1,5 @@
 .solution-section {
-  padding: 6rem 2rem;
+  padding: 6rem clamp(16px, 4vw, 48px);
   background-color: var(--bg, #0a0a0a);
   color: var(--text, #f0ede6);
   overflow: hidden;
@@ -10,16 +10,6 @@
   margin-bottom: 5rem;
 }
 
-.reveal-item-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-item-fade.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .timeline-container {
   position: relative;
@@ -42,25 +32,16 @@
   position: relative;
   width: 50%;
   padding: 2rem 3rem;
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .timeline-step.left {
   left: 0;
   text-align: right;
-  transform: translateX(-50px);
 }
 
 .timeline-step.right {
   left: 50%;
   text-align: left;
-  transform: translateX(50px);
-}
-
-.timeline-step.revealed {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .timeline-node {
