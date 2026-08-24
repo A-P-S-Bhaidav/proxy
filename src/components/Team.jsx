@@ -4,86 +4,86 @@ import './Team.css';
 
 const teamMembers = [
   {
-    name: "Anant Pratap Singh Bhaidav",
-    role: "Founder & CEO",
-    email: "mailto:anantbhaidav@gmail.com",
-    linkedin: "https://www.linkedin.com/in/anant-bhaidav/",
-    phone: "tel:+919968359499",
-    gradient: "linear-gradient(135deg, #c9a96e, #8B6914)",
-    initial: "A"
+    name: 'Anant Pratap Singh Bhaidav',
+    email: 'anantbhaidav@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/anant-bhaidav/',
+    phone: '+91 9968359499'
   },
   {
-    name: "Bhowmik Ahuja",
-    role: "Co-Founder & Operations",
-    email: "mailto:bhowmik@proxy.agency",
-    linkedin: "https://www.linkedin.com/in/bhowmik-ahuja7/",
-    phone: "tel:+918517801653",
-    gradient: "linear-gradient(135deg, #4e4376, #2b5876)",
-    initial: "B"
+    name: 'Bhowmik Ahuja',
+    email: 'bhowmik@proxy.agency',
+    linkedin: 'https://www.linkedin.com/in/bhowmik-ahuja7/',
+    phone: '+91 8517801653'
   },
   {
-    name: "Atharav Arya",
-    role: "Co-Founder & Strategy",
-    email: "mailto:atharav@proxy.agency",
-    linkedin: "https://www.linkedin.com/in/atharav-arya-b8471336a/",
-    phone: "tel:+917895824004",
-    gradient: "linear-gradient(135deg, #11998e, #38ef7d)",
-    initial: "A"
+    name: 'Atharav Arya',
+    email: 'atharav@proxy.agency',
+    linkedin: 'https://www.linkedin.com/in/atharav-arya-b8471336a/',
+    phone: '+91 7895824004'
   }
 ];
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
   }
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
   }
 };
 
-const Team = () => {
+const Contact = () => {
   return (
-    <section className="team-section" id="team">
-      <div className="team-container">
-        <div className="team-header">
-          <span className="section-label">OUR TEAM</span>
-          <h2 className="section-title">The people behind PROXY</h2>
+    <section className="contact-section" id="contact">
+      <div className="contact-container">
+        <motion.div
+          className="contact-header"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <span className="section-label">CONTACT</span>
+          <h2 className="section-title">Get in touch</h2>
           <p className="section-subtitle">
-            A passionate team dedicated to transforming your brand's social media presence.
+            Ready to scale your brand? Reach out to our team directly.
           </p>
-        </div>
-        
-        <motion.div 
-          className="team-grid"
+        </motion.div>
+
+        <motion.div
+          className="contact-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-60px' }}
         >
           {teamMembers.map((member, index) => (
-            <motion.div className="team-card" key={index} variants={cardVariants}>
-              <div className="avatar-wrapper">
-                <div 
-                  className="avatar" 
-                  style={{ background: member.gradient }}
-                >
-                  {member.initial}
-                </div>
-              </div>
-              <h3 className="member-name">{member.name}</h3>
-              <p className="member-role">{member.role}</p>
-              <div className="member-links">
-                <a href={member.email} className="contact-link" aria-label="Email">✉</a>
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link" aria-label="LinkedIn">in</a>
-                <a href={member.phone} className="contact-link" aria-label="Phone">📞</a>
+            <motion.div
+              className="contact-card"
+              key={index}
+              variants={cardVariants}
+            >
+              <h3 className="contact-name">{member.name}</h3>
+              <div className="contact-details">
+                <a href={`mailto:${member.email}`} className="contact-detail-row">
+                  <span className="contact-icon">✉</span>
+                  <span>{member.email}</span>
+                </a>
+                <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="contact-detail-row">
+                  <span className="contact-icon">☎</span>
+                  <span>{member.phone}</span>
+                </a>
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="contact-detail-row">
+                  <span className="contact-icon">in</span>
+                  <span>LinkedIn Profile</span>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -93,4 +93,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Contact;

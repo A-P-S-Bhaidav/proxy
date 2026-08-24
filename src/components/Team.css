@@ -1,117 +1,92 @@
-.team-section {
-  padding: 8rem 0;
-  background-color: var(--bg-color, #0a0a0a);
-  color: var(--text-color, #f0ede6);
+.contact-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background-color: var(--bg);
 }
-.team-container {
-  max-width: 1280px;
+
+.contact-container {
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 80px);
+  padding: 0 clamp(16px, 3vw, 32px);
 }
-.team-header {
+
+.contact-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
-.section-label {
-  color: var(--accent, #c9a96e);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 1rem;
-  font-family: 'Inter', sans-serif;
-}
-.section-title {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-.section-subtitle {
-  color: rgba(240, 237, 230, 0.7);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-family: 'Inter', sans-serif;
-}
-.team-grid {
+
+.contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
-.team-card {
-  background-color: var(--bg-card, #111111);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  text-align: center;
+
+.contact-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
   transition: all 0.3s ease;
 }
-.team-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(201,169,110,0.2);
+
+.contact-card:hover {
+  border-color: rgba(201, 169, 110, 0.2);
+  transform: translateY(-4px);
 }
-.avatar-wrapper {
-  display: flex;
-  justify-content: center;
+
+.contact-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-detail-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-family: 'Sora', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-.member-name {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-.member-role {
-  color: var(--accent, #c9a96e);
+  gap: 0.75rem;
+  color: var(--text-muted);
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Inter', sans-serif;
+  transition: color 0.3s ease;
+  cursor: pointer;
 }
-.member-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+
+.contact-detail-row:hover {
+  color: var(--accent);
 }
-.contact-link {
-  width: 40px;
-  height: 40px;
+
+.contact-icon {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color, #f0ede6);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
 }
-.contact-link:hover {
-  border-color: var(--accent, #c9a96e);
-  color: var(--accent, #c9a96e);
+
+.contact-detail-row:hover .contact-icon {
+  border-color: var(--accent);
 }
+
 @media (max-width: 992px) {
-  .team-grid {
+  .contact-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 768px) {
-  .team-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -10,9 +10,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 80px);
+  padding: 0 clamp(16px, 3vw, 32px);
   padding-bottom: 4rem;
 }
 
@@ -89,9 +89,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 2rem clamp(20px, 5vw, 80px);
+  padding: 2rem clamp(16px, 3vw, 32px);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 

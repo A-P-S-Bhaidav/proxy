@@ -1,10 +1,10 @@
 .problems-section {
-  padding: clamp(80px, 10vw, 120px) clamp(16px, 4vw, 48px);
+  padding: clamp(60px, 8vw, 100px) clamp(16px, 3vw, 32px);
   background-color: var(--bg);
 }
 
 .problems-section .container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import './Hero.css';
 
@@ -132,7 +133,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.6 }}
         >
-          <a href="#team" className="btn-primary">Start Your Campaign</a>
+          <Link to="/pricing" className="btn-primary">Start Your Campaign</Link>
           <a href="#solution" className="btn-secondary">See How It Works</a>
         </motion.div>
 

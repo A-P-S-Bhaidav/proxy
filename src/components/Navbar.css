@@ -17,17 +17,17 @@
 }
 
 .navbar-inner {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px clamp(16px, 4vw, 48px);
+  padding: 24px clamp(16px, 3vw, 32px);
   transition: padding 0.3s ease;
 }
 
 .navbar.scrolled .navbar-inner {
-  padding: 16px clamp(16px, 4vw, 48px);
+  padding: 16px clamp(16px, 3vw, 32px);
 }
 
 .nav-logo {

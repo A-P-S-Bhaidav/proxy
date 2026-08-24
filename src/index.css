@@ -11,7 +11,7 @@
   --font-heading: 'Sora', sans-serif;
   --font-body: 'Inter', sans-serif;
   --radius: 12px;
-  --section-padding: clamp(80px, 10vw, 120px) clamp(16px, 4vw, 48px);
+  --section-padding: clamp(60px, 8vw, 100px) clamp(16px, 3vw, 32px);
 }
 
 *, *::before, *::after {
@@ -59,9 +59,9 @@ button {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 48px);
+  padding: 0 clamp(16px, 3vw, 32px);
 }
 
 .section {
