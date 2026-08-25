@@ -11,15 +11,9 @@ const teamMembers = [
   },
   {
     name: 'Bhowmik Ahuja',
-    email: 'bhowmik@proxy.agency',
+    email: 'bhowmikahuja7@gmail.com',
     linkedin: 'https://www.linkedin.com/in/bhowmik-ahuja7/',
     phone: '+91 8517801653'
-  },
-  {
-    name: 'Atharav Arya',
-    email: 'atharav@proxy.agency',
-    linkedin: 'https://www.linkedin.com/in/atharav-arya-b8471336a/',
-    phone: '+91 7895824004'
   }
 ];
 
@@ -76,7 +70,7 @@ const Contact = () => {
                   <span className="contact-icon">✉</span>
                   <span>{member.email}</span>
                 </a>
-                <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="contact-detail-row">
+                <a href={`tel:${member.phone.replace(/\\s/g, '')}`} className="contact-detail-row">
                   <span className="contact-icon">☎</span>
                   <span>{member.phone}</span>
                 </a>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Pricing.css';
 
 const plans = [
@@ -103,8 +103,7 @@ const plans = [
     isCustom: true,
     contacts: [
       { name: 'Anant Pratap Singh Bhaidav', phone: '+91 9968359499', email: 'anantbhaidav@gmail.com' },
-      { name: 'Bhowmik Ahuja', phone: '+91 8517801653', email: 'bhowmik@proxy.agency' },
-      { name: 'Atharav Arya', phone: '+91 7895824004', email: 'atharav@proxy.agency' }
+      { name: 'Bhowmik Ahuja', phone: '+91 8517801653', email: 'bhowmikahuja7@gmail.com' }
     ]
   }
 ];
@@ -127,6 +126,7 @@ const cardVariants = {
 
 const Pricing = () => {
   const [showCustomContacts, setShowCustomContacts] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -135,6 +135,16 @@ const Pricing = () => {
   return (
     <div className="pricing-page">
       <div className="pricing-container">
+        <motion.button
+          className="pricing-back-btn"
+          onClick={() => navigate('/')}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <span>←</span> Back to Home
+        </motion.button>
+
         <motion.div
           className="pricing-header"
           initial={{ opacity: 0, y: 30 }}
@@ -219,9 +229,9 @@ const Pricing = () => {
                   )}
                 </>
               ) : (
-                <a href="#contact" className="plan-cta-btn">
+                <Link to="/" className="plan-cta-btn">
                   {plan.cta}
-                </a>
+                </Link>
               )}
             </motion.div>
           ))}

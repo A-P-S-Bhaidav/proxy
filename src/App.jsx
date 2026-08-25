@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problems from './components/Problems';
@@ -25,10 +25,14 @@ function HomePage() {
   );
 }
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const hiddenNavbarRoutes = ['/pricing'];
+  const showNavbar = !hiddenNavbarRoutes.includes(location.pathname);
+
   return (
-    <Router>
-      <Navbar />
+    <>
+      {showNavbar && <Navbar />}
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/pricing' element={<Pricing />} />
@@ -37,6 +41,14 @@ function App() {
         <Route path='/refund' element={<RefundPolicy />} />
       </Routes>
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
