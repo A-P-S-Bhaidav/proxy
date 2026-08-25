@@ -164,7 +164,17 @@ const Projects = () => {
               onClick={() => setOpenBook(proj)}
             >
               <div className="book">
+                {/* Book Pages (visible paper edges) */}
+                <div className="book-pages">
+                  <div className="book-page-edge page-1"></div>
+                  <div className="book-page-edge page-2"></div>
+                  <div className="book-page-edge page-3"></div>
+                  <div className="book-page-edge page-4"></div>
+                  <div className="book-page-edge page-5"></div>
+                </div>
+                {/* Book Spine */}
                 <div className="book-spine" style={{ background: proj.accentColor }}></div>
+                {/* Book Cover */}
                 <div className="book-cover" style={{ background: proj.coverColor }}>
                   <div className="book-cover-inner">
                     <div className="book-logo-wrapper">
@@ -208,7 +218,7 @@ const Projects = () => {
               <div className="book-modal-content">
                 <button className="book-modal-close" onClick={() => setOpenBook(null)}>✕</button>
                 
-                <div className="book-page">
+                <div className="book-modal-page">
                   <div className="book-page-header">
                     <img src={openBook.logo} alt={openBook.name} className="book-page-logo" />
                     <div>
