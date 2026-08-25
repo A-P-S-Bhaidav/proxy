@@ -301,3 +301,9 @@
     transform: translateY(-4px);
   }
 }
+
+/* Homepage inline pricing section */
+.pricing-section-home {
+  padding: clamp(60px, 8vw, 100px) clamp(16px, 3vw, 32px);
+  background-color: var(--bg);
+}

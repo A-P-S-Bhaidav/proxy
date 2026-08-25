@@ -6,6 +6,7 @@ import Solution from './components/Solution';
 import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Team';
+import PricingSection from './components/PricingSection';
 import Footer from './components/Footer';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -19,6 +20,7 @@ function HomePage() {
       <Problems />
       <Solution />
       <Projects />
+      <PricingSection />
       <Testimonials />
       <Contact />
     </>

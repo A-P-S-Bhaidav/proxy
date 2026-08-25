@@ -144,11 +144,11 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 0.8 }}
         >
-          <AnimatedCounter value="50" suffix="+" label="Brands Scaled" />
+          <AnimatedCounter value="15" suffix="+" label="Brands Scaled" />
           <div className="hero-stats-divider"></div>
           <AnimatedCounter value="10M" suffix="+" label="Organic Reach" />
           <div className="hero-stats-divider"></div>
-          <AnimatedCounter value="99" suffix="%" label="Client Retention" />
+          <AnimatedCounter value="76" suffix="%" label="Retention Rate" />
         </motion.div>
       </div>
 
